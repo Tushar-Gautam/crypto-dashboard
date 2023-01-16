@@ -107,6 +107,13 @@ input[type="reset"] {
     right: -2.2rem;
   }
 }
+
+.madeBy {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
 @media only screen and (max-width: 800px) {
   .heading-container {
     text-align: center;

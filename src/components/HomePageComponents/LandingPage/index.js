@@ -31,6 +31,11 @@ function LandingPageComponent() {
           <p className="para">
             Track Crypto through a public API in real time.Visit the Dashboard
             to do so!
+            <br />
+            <div className="madeBy">
+              Made by-{" "}
+              <span style={{ color: "var(--white)" }}>Tushar Gautam</span>
+            </div>
           </p>
           <div className="button-div">
             <a href="/dashboard">
