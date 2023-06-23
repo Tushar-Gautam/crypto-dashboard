@@ -17,20 +17,25 @@ function List({ coin }) {
     last_updated,
   } = coin;
 
-  // let updatedDate = (date) => {
-  //   const time = date.split("T");
-  //   const daa = time[0] + " " + time[1];
-  //   const d = new Date(daa);
-  //   let minutes = d.getTime();
-  //   var t = new Date(minutes);
-  //   var a = t.toTimeString().substring(0, 9);
-  //   let ans = a + "IST " + t.toDateString();
-  //   console.log(ans);
-  //   return <p>{ans}</p>;
-  // };
+  function convertDateTime(dateTimeString) {
+    const dateTime = new Date(dateTimeString);
+    const day = String(dateTime.getDate()).padStart(2, "0");
+    const month = String(dateTime.getMonth() + 1).padStart(2, "0");
+    const year = String(dateTime.getFullYear()).slice(-2);
+    const hours = String(dateTime.getHours()).padStart(2, "0");
+    const minutes = String(dateTime.getMinutes()).padStart(2, "0");
+
+    const formattedDate = `${day}/${month}/${year}`;
+    const formattedTime = `${hours}:${minutes}`;
+
+    return {
+      date: formattedDate,
+      time: formattedTime,
+    };
+  }
 
   return (
-    <div className="list-wrapper1">
+    <div className="list-wrapper">
       <a href={`coin?${coin.id}`}>
         <td>
           <img src={image} alt="" />
@@ -67,17 +72,20 @@ function List({ coin }) {
         )}
       </td>
       <td>
+        <FaRupeeSign className="rs" style={{ marginRight: ".2rem" }} />
         {CurrentPrice.toLocaleString("en-IN")}
-        <FaRupeeSign className="rs" />
       </td>
       <td>
         <p>
-          <FaRupeeSign className="rs" />
+          <FaRupeeSign className="rs" style={{ marginRight: ".2rem" }} />
           {total_volume.toLocaleString("en-IN")}
         </p>
       </td>
       <td>
-        <p className="date">updatedDate</p>
+        <p className="date">
+          {convertDateTime(last_updated).time}{" "}
+          {convertDateTime(last_updated).date}
+        </p>
       </td>
     </div>
   );

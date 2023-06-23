@@ -7,14 +7,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.75rem;
+  width: 80%;
+  gap: 1rem;
+  padding: 1rem 1rem;
 }
-
+a {
+  display: flex;
+  align-items: center;
+}
 td {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-right: 1.5rem;
-  margin-left: 1.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  width: fit-content;
   min-width: 11.15vw;
   font-size: 1rem;
   text-align: center;
@@ -29,4 +35,66 @@ img {
   text-align: center;
   padding-right: 0;
   margin-right: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  .list-logo {
+    width: 40px !important;
+  }
+  .td-text {
+    font-size: 80%;
+  }
+  .td-chips {
+    min-width: fit-content;
+  }
+  .td-chip-flex {
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .list-wrapper {
+    padding: 0rem 0rem;
+  }
+
+  .list-logo {
+    width: 30px !important;
+  }
+  .td-chip-flex {
+    gap: 0.5rem;
+  }
+
+  .min {
+    min-width: fit-content;
+    padding: 0rem 1rem;
+  }
+  .td-icon,
+  .td-cap {
+    display: none !important;
+  }
+
+  .image-td {
+    width: fit-content;
+    margin-right: 0rem;
+  }
+  .td-chip-flex {
+    margin-right: 0rem;
+  }
+  .td-text {
+    font-size: 65%;
+  }
+  .td-chips {
+    font-size: 50%;
+    padding: 0.25rem 0.25rem;
+    margin: 1rem 0rem;
+    border-width: 1px;
+  }
+
+  .td-volume-mobile {
+    display: block;
+  }
+
+  .td-volume {
+    display: none;
+  }
 }

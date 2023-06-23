@@ -60,6 +60,7 @@ img {
   border-radius: 2rem;
   margin-right: 10rem;
   border: 1px solid;
+  width: fit-content;
 }
 .chip p {
   margin: 0;
